@@ -1,0 +1,403 @@
+$TextGrey: rgb(204, 204, 204);
+$HoverBlue: rgb(92, 244, 255);
+
+@mixin flex($justify, $align, $direction) {
+  display: flex;
+  justify-content: $justify;
+  align-items: $align;
+  flex-direction: $direction;
+}
+
+.App {
+  background-image: linear-gradient(
+    99deg,
+    rgb(28, 85, 107),
+    rgb(72, 108, 131) 40%,
+    rgb(29, 81, 102)
+  );
+  /* height: 100vh; */
+}
+
+#Intro {
+  height: 100vh;
+  @include flex(center, center, column);
+}
+
+.IntroText {
+  color: white;
+  font-size: 40px;
+  text-align: center;
+}
+
+.Intro {
+  -webkit-animation: Intro 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: Intro 1.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes Intro {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+@keyframes Intro {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.Highlight {
+  color: rgb(92, 244, 255);
+}
+
+.ScrollContainer {
+  height: 75px;
+  width: 100%;
+  @include flex(center, center, column);
+}
+
+#IntroBtn {
+  height: 40px;
+  width: 175px;
+  color: white;
+  font-size: 20px;
+  background-color: transparent;
+  
+}
+
+a {
+  color: rgb(204, 204, 204)
+
+  
+}
+
+#IntroBtn:hover {
+  background-color: rgb(56, 56, 56);
+  color: $HoverBlue;
+  // border: solid rgb(92, 244, 255);
+}
+
+.App-logo {
+  height: 15vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 25s linear;
+  }
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.Nav {
+  height: 6vh;
+  background-color: rgb(39, 39, 39);
+  display: flex;
+  align-items: center;
+  padding-left: 15px;
+  border-bottom: solid rgb(84, 213, 223);
+  position: sticky;
+  top: 0;
+  div {
+    color: rgb(204, 204, 204);
+    width: 115px;
+    font-size: 20px;
+    // margin-left: 10px;
+    text-decoration: underline;
+
+    a {
+      color: rgb(204, 204, 204)
+    }
+  }
+  a:hover {
+    color: rgb(92, 244, 255);
+
+  }
+}
+
+.NavLinks {
+  color: rgb(204, 204, 204);
+  width: 115px;
+  font-size: 20px;
+  // margin-left: 10px;
+  text-decoration: underline;
+}
+
+.NavLinks:hover {
+  color: rgb(92, 244, 255);
+}
+
+#About {
+  height: 100vh;
+
+  background-color: rgb(39, 39, 39);
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: solid rgb(84, 213, 223);
+}
+
+.AboutTitle {
+  color: $TextGrey;
+  height: 10vh;
+  width: 100%;
+  @include flex(center, center, column);
+  font-size: 40px;
+  text-decoration: underline;
+  margin-top: 6vh;
+}
+
+.AboutDescription {
+  // height: 35vh;
+  padding-bottom: 40px;
+  width: 90%;
+  color: $TextGrey;
+}
+
+@media (min-width: 800px) {
+  .AboutDescription {
+    width: 60%;
+    font-size: 20px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .AboutDescription {
+    width: 40%;
+    font-size: 20px;
+  }
+}
+
+.MyPicsContainer {
+  height: 35vh;
+  width: 100%;
+  // background-color: gray;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  padding-right: 2vh;
+  border-top: solid $TextGrey;
+}
+
+.BandPicBox {
+  height: 90%;
+  // background-color: gray;
+  display: flex;
+  align-items: center;
+}
+
+.BandPic {
+  height: 100%;
+  width: 40vh;
+  object-fit: cover;
+  object-position: -10%;
+}
+
+.BackpackingPicBox {
+  height: 90%;
+  width: 40vh;
+}
+
+.BackpackingPic {
+  height: 100%;
+  width: 40vh;
+  object-fit: cover;
+}
+
+.PicContainer {
+  height: 90%;
+  width: 40vh;
+  object-fit: cover;
+}
+
+.Pic {
+  height: 100%;
+  width: 40vh;
+  object-fit: cover;
+}
+
+.TigerPicBox {
+  height: 90%;
+  width: 40vh;
+  margin-right: 1vh;
+}
+
+.TigerPic {
+  height: 100%;
+  width: 40vh;
+  object-fit: cover;
+  object-position: -10%;
+}
+
+#SkillsScroll {
+  height: 6vh;
+  // background-color: black;
+}
+
+#Skills {
+  height: 100vh;
+  border-bottom: solid rgb(84, 213, 223);
+}
+
+.SkillsTitle {
+  color: $TextGrey;
+  height: 10vh;
+  width: 100%;
+  @include flex(center, center, column);
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+.SkillsContainer {
+  // height: 80vh;
+}
+
+.CodePicsContainer {
+  height: 175px;
+  @include flex(center, center, column);
+}
+
+.CodeLogos {
+  height: 80%;
+}
+
+.SkillsList {
+  padding-left: 30px;
+  // height: 60vh;
+  font-size: 35px;
+  color: rgb(92, 244, 255);
+}
+
+#ProjectsScroll {
+  height: 6vh;
+  background-color: rgb(39, 39, 39);
+
+}
+
+#Projects {
+  height: 94vh;
+  background-color: rgb(39, 39, 39);
+  border-bottom: solid rgb(84, 213, 223);
+}
+
+.ProjectsTitle {
+  color: $TextGrey;
+  height: 100px;
+  width: 100%;
+  @include flex(center, center, column);
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+.BandProject {
+  background-color: gray;
+  width: 50%;
+  @include flex(center, center, column);
+
+
+}
+
+.BandProjectTitle {
+  @include flex(center, center, column);
+  // width: 45vh;
+  height: 15vh;
+  // padding-left: 30px;
+  font-size: 35px;
+  color: rgb(92, 244, 255);
+  text-decoration: underline;
+  
+}
+
+.BandSlides {
+  height: 60vh;
+  width: 50vh;
+  background-color: blue;
+  display: flex;
+  justify-content: center;
+}
+
+.Slides {
+  height: 100%;
+  // width: 40vh;
+  object-fit: cover;
+}
+
+#Contact {
+  height: 94vh;
+  border-bottom: solid rgb(84, 213, 223);
+}
+
+.ContactTitle {
+  color: $TextGrey;
+  height: 100px;
+  width: 100%;
+  @include flex(center, center, column);
+  font-size: 40px;
+  text-decoration: underline;
+}
+
+.ContactText {
+  @include flex(center, center, column);
+  padding-left: 30px;
+  // height: 60vh;
+  font-size: 35px;
+  color: rgb(92, 244, 255);
+}
+
+.ContactList {
+  height: 20vh;
+  color: rgb(92, 244, 255);
+  font-size: 25px;
+  display: flex;
+  // background-color: gray;
+  align-items: center;
+  padding-left: 30px;
+}
+
+.LinkBox {
+  height: 7vh;
+  padding-left: 30px;
+}
+
+.LinkedPic {
+  height: 6vh;
+}
+
+.LinkedPic:hover {
+  background-color: $HoverBlue;
+}
+
+.GitBox {
+  height: 7vh;
+  padding-left: 15px;
+}
+
+.GitPic {
+  height: 8vh;
+}
+
+.GitPic:hover {
+  background-color: $HoverBlue;
+}
